@@ -7,10 +7,10 @@ function dd(mixed $valor)
     echo '</pre>';
 }
 
-$host = 'db'; // Host (No caso de você aluno, creio que seja localhost)
-$db   = 'mscode'; // Base banco (database)
-$user = 'guilherme'; // Usuário (User) do Admin
-$pass = 'guilherme'; // Senha (Passoward) do Admin
+$host = 'localhost'; // Host (No caso de você aluno, creio que seja localhost)
+$db   = 'escola'; // Base banco (database)
+$user = 'DOUGLAS'; // Usuário (User) do Admin
+$pass = '1234'; // Senha (Passoward) do Admin
 $port = '3306'; // Porta do Mysql
 $charset = 'utf8mb4'; // Codificação
 
@@ -27,7 +27,7 @@ $dados = [];
 # Teste de conexão, garantia de que temos acesso ao banco.
 try {
     $pdo = new PDO($dsn, $user, $pass);
-    echo "Conexão estabelecida com sucesso." . PHP_EOL;
+    // echo "Conexão estabelecida com sucesso." . PHP_EOL;
 } catch (\Exception $e) {
     throw new \Exception($e->getMessage(), (int)$e->getCode());
 }
@@ -43,7 +43,7 @@ try {
 # Teste de query, retorno de valores definidos.
 // try {
 //     $sql = <<<SQL
-//         SELECT * FROM mscode.alunos WHERE alunos.country = 'Brazil'
+//         SELECT * FROM escola.alunos WHERE alunos.country = 'Brazil'
 //     SQL;
     
 //    $dados = $pdo->query($sql)
@@ -59,17 +59,17 @@ try {
 # Teste de Inserção, novo registro no banco.
 // try {
 //     $sql = <<<SQL
-//         INSERT INTO mscode.alunos (name, country)
+//         INSERT INTO escola.alunos (name, country)
 //             VALUES (:name, :pais)
 //     SQL;  
 
 //     $pdo->prepare($sql)
 //         ->execute([
-//             "name" => "Guilherme Venturini",
+//             "name" => "Douglas Brito",
 //             "pais" => "Brazil"
 //         ]);
 
-//     $query = $pdo->prepare("SELECT * FROM mscode.alunos WHERE id = :id");
+//     $query = $pdo->prepare("SELECT * FROM escola.alunos WHERE id = :id");
 //     $query->execute([
 //         "id" => $pdo->lastInsertId()
 //     ]);
@@ -84,20 +84,20 @@ try {
 # Teste de alteração de tabela adicionando nova coluna no banco ou removendo coluna existente.
 // try {
 //     $sql = <<<SQL
-//         UPDATE mscode.alunos SET alunos.email = :email 
+//         UPDATE escola.alunos SET alunos.email = :email 
 //         WHERE alunos.name = :name
 //     SQL;
 
 
 //    $pdo->prepare($sql)
 //         ->execute([
-//              "name" => "Guilherme Venturini",
-//              "email" => "moveissimonetti@gmail.com",
+//              "name" => "Douglas Brito",
+//              "email" => "douglasbrito@gmail.com",
 //          ]);
 
-//     $query = $pdo->prepare("SELECT * FROM mscode.alunos WHERE name = :name");
+//     $query = $pdo->prepare("SELECT * FROM escola.alunos WHERE name = :name");
 //     $query->execute([
-//        "name" => "Guilherme Venturini",
+//        "name" => "Douglas Brito",
 //     ]);
 
 //     $dados = $query->fetchAll();
@@ -110,17 +110,17 @@ try {
 # Teste de remoção da informação, remover registro existente no banco.
 // try {
 //    $sql = <<<SQL
-//         DELETE FROM mscode.alunos WHERE name = :name
+//         DELETE FROM escola.alunos WHERE name = :name
 //     SQL;  
 
 //     $pdo->prepare($sql)
 //         ->execute([
-//             "name" => "Guilherme Venturini",
+//             "name" => "Douglas Brito",
 //         ]);
 
-//     $query = $pdo->prepare("SELECT * FROM mscode.alunos WHERE name = :name");
+//     $query = $pdo->prepare("SELECT * FROM escola.alunos WHERE name = :name");
 //     $query->execute([
-//         "name" => "Guilherme Venturini"
+//         "name" => "Douglas Brito",
 //     ]);
 
 //     $dados = $query->fetchAll();
