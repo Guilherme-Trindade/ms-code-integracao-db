@@ -21,7 +21,7 @@ $dados = [];
 
 try {
     $pdo = new PDO($dns, $user, $pass);
-    // echo "Conexão banco TRINDADE estabelecida com sucesso." . PHP_EOL;
+    echo "Conexão banco TRINDADE estabelecida com sucesso." . PHP_EOL;
 } catch (\Exception $e) {
     throw new \Exception($e->getMessage(), (int)$e->getCode());
 }
@@ -52,15 +52,15 @@ try {
 // }
 
 #busca de dados no banco de dados
-try {
-    $sql = <<<SQL
-        SELECT * FROM TRINDADE.alunos WHERE alunos.name = 'Breno silva'
-    SQL;
+// try {
+//     $sql = <<<SQL
+//         SELECT * FROM TRINDADE.alunos WHERE alunos.name = 'Breno silva'
+//     SQL;
 
-    $dados = $pdo->query($sql)
-             ->fetchAll();
+//     $dados = $pdo->query($sql)
+//              ->fetchAll();
 
-    echo "Registro buscado com sucesso." . PHP_EOL;
-} catch (\Exception $e) {
-    throw new \Exception($e->getMessage(), (int)$e->getCode());
-}
+//     echo "Registro buscado com sucesso." . PHP_EOL;
+// } catch (\Exception $e) {
+//     throw new \Exception($e->getMessage(), (int)$e->getCode());
+// }
