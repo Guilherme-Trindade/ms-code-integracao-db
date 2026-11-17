@@ -1,38 +1,4 @@
 <?php
-
-function dd(mixed $valor)
-{
-    echo '<pre>';
-    print_r($valor);
-    echo '</pre>';
-}
-
-$host = 'db'; // Host (No caso de você aluno, creio que seja localhost)
-$db   = 'mscode'; // Base banco (database)
-$user = 'guilherme'; // Usuário (User) do Admin
-$pass = 'guilherme'; // Senha (Passoward) do Admin
-$port = '3306'; // Porta do Mysql
-$charset = 'utf8mb4'; // Codificação
-
-$dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";
-
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false, // Essencial para performance e segurança real de prepared statements
-];
-
-$dados = [];
-
-# Teste de conexão, garantia de que temos acesso ao banco.
-try {
-    $pdo = new PDO($dsn, $user, $pass);
-    echo "Conexão estabelecida com sucesso." . PHP_EOL;
-} catch (\Exception $e) {
-    throw new \Exception($e->getMessage(), (int)$e->getCode());
-}
-
-
 # CRUD
 ## Create(Criar)
 ## Read(Ler)
